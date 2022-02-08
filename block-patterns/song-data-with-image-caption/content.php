@@ -23,7 +23,7 @@ class Content {
 
 		$this->content = '<!-- wp:columns -->
 		<div class="wp-block-columns"><!-- wp:column {"className":"song-info-padding"} -->
-		<div class="wp-block-column song-info-padding"><!-- wp:heading -->
+		<div class="wp-block-column"><!-- wp:heading -->
 		<h2>Artist: Phil Kane</h2>
 		<!-- /wp:heading -->
 

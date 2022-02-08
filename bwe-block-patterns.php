@@ -44,7 +44,7 @@ use BweBlockPatterns\BlockPatterns\SongData\Register_Song_Data_Block;
 use BweBlockPatterns\BlockPatterns\SongDataWithImageCaption\Register_Song_Data_With_Caption_Block;
 use BweBlockPatterns\BlockPatterns\Calendar\Register_Calendar_Block;
 use BweBlockPatterns\BlockPatterns\ContactUsPage\Register_Contact_Us_Page_Block;
-
+use BweBlockPatterns\BlockPatterns\Navigation\Register_Navigation_Block;
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
@@ -78,6 +78,10 @@ class Custom_Block_Patterns {
        
         require_once __DIR__ . '/block-patterns/contact-us-page/index.php';
 		$register_contact_us_page_block_pattern = new Register_Contact_Us_Page_Block();
+
+        require_once __DIR__ . '/block-patterns/navigation/index.php';
+		$register_calendar_block_pattern = new Register_Navigation_Block();
+       
 	}
 
 	/**

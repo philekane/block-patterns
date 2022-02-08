@@ -6,7 +6,7 @@
  * @package bwe-block-patterns
  */
 
-namespace BweBlockPatterns\BlockPatterns\SongData;
+namespace BweBlockPatterns\BlockPatterns\Navigation;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
@@ -31,12 +31,13 @@ class Block_Style {
 	public function bwe_register_block_styles() {
 
 		register_block_style(
-			'bwe-block-patterns/song-data',
+			'core/columns',
 			array(
-				'name'         => 'song-info-padding',
-				'label'        => __( 'Song Info Padding', 'textdomain' ),
-				'inline_style' => '.song-info-padding {
-					padding: 0 0 0 4%;
+				'name'         => 'top-header-height',
+				'label'        => __( 'Top Header Height', 'textdomain' ),
+				'inline_style' => '.top-header-height {
+					height: 6em;
+					background-color:red;
 				}',
 			)
 		);
