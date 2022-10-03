@@ -47,6 +47,13 @@ class Register_Lyrics_Block {
 					'inserter'      => true,
 				)
 			);
+			register_block_pattern(
+				'namespace/title',
+				array(
+					'title'         => __( 'Pattern Title', ' BweBlockPatterns' ),
+					'content'       => ''
+				)
+			);
 		}
 	}
 }

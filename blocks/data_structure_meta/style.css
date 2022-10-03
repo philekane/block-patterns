@@ -1,0 +1,169 @@
+/**
+ * The following styles get applied both on the front of your site and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-plants-plants {
+	background-color: #000;
+	color: #fff;
+	padding: 2px;
+}
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * Frontend CSS
+ * ----------------------------------------------------------------------------
+ */
+ .single .wp-block-plants-plant-block {
+	margin-left:auto;
+	margin-right:auto;
+}
+ .wp-block-plants-plant-block {
+	padding:1em;
+	display: flex;
+	align-items: stretch;
+	background-color: #ffffff;
+	margin-bottom: 1em;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+}
+
+ .wp-block-plants-plant-block ul,
+ .wp-block-plants-plant-block li {
+	 list-style: disc;
+	 margin: 0 1em 0 1em;
+	 padding: 0 ;
+	 white-space: normal;
+ }
+
+ .wp-block-plants-plant-block .plant-image {
+	 display: flex;
+	 align-items: center;
+	 background-size: cover;
+	 background-position: center;
+	/* width: 60%;
+	/* height: 500px;*/
+ }
+ .wp-block-plants-plant-block .plant-image img {
+	 opacity: 0;
+	 margin: -9999px;
+ }
+
+ .wp-block-plants-plant-block .plant-content {
+	width: 100%;
+	align-self: left;
+	padding: unset;
+	box-sizing: border-box;
+}
+ .wp-block-plants-plant-block .plant-content h3 {
+	 margin: 0px;
+	 padding: 0px;
+ }
+ .wp-block-plants-plant-block .plant-content h5 {
+	 color: rgba(0, 0, 0, 0.4);
+	 text-transform: uppercase;
+	 margin: 0px;
+	 padding: 8px 0px;
+ }
+ .wp-block-plants-plant-block .plant-content p {
+	 line-height: 1.6;
+	 margin: 0px;
+	 padding: 8px 0px;
+ }
+ .wp-block-plants-plant-block figcaption {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: #555d66;
+    text-align: center;
+	font-size: 13px;
+    caption-side: top;
+}
+.wp-block-image figcaption{
+    color:#A30000;
+	/*	margin-top: -1em;*/
+		margin-bottom: .5em;
+		text-align: center;
+		font-size: 60%;
+		font-style: italic;
+	}
+	.plant-grid figcaption{
+		color:#A30000;
+		margin-top: 0.1em;
+		margin-bottom: .5em;
+		text-align: center;
+		font-size: 50%;
+		font-style: italic;
+		line-height: 1.2;
+	}
+	.header-image figcaption{
+    color:#8A0000;
+		margin-top: 0.1em;
+		margin-bottom: .2em;
+		text-align: center;
+		font-size: 60%;
+		font-style: italic;
+		line-height: 1.2;
+	}
+.latinName h2{
+	font-style: italic;
+	text-transform: lowercase;
+}
+.latinName h2::first-letter{
+	text-transform: uppercase;
+}
+.wp-block-column .plant-content {
+	margin-bottom: .1em;
+ }
+
+ .has-3-columns .wp-block-image img{
+	margin:.5em;
+}
+
+ @media only screen and (max-width: 768px) {
+
+	.wp-block-plants-plant-block {
+		padding:0;
+		display: flex;
+		align-items: stretch;
+		background-color: #ffffff;
+		margin-bottom: 1em;
+		box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+	}
+	.wp-block-plants-plant-block .plant-image {
+		display: flex;
+		align-items: center;
+		background-size: cover;
+		background-position: center;
+		/*width: 60%;*/
+	   /* height: 500px;*/
+
+	}
+	.wp-block-plants-plant-block .plant-image img {
+		opacity: 0;
+		margin: 0px;
+	}
+	.wp-block-plants-plant-block .plant-content {
+		width: 100%;
+		align-self: center;
+		padding: 0 .3em;
+		box-sizing: border-box;
+	}
+	.wp-block-plants-plant-block .plant-content h2 {
+		margin: 0px;
+		padding: 0px;
+		width:fit-content;
+	}
+	.wp-block-plants-plant-block .plant-content h3 {
+		margin: 0px;
+		padding: 0px;
+	}
+	.wp-block-plants-plant-block .plant-content h5 {
+		color: rgba(0, 0, 0, 0.4);
+		text-transform: uppercase;
+		margin: 0px;
+		padding: 8px 0px;
+	}
+ }
+
+ 

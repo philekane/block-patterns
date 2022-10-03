@@ -18,13 +18,15 @@ class Content {
 
 	/**
 	 * Construct the plugin object
+	 * 
+	 * <!-- wp:pattern {"Song Title": "namespace/title"} /-->
 	 */
     public function __construct() {
 
 		$this->content = '<!-- wp:verse -->
-		<pre class="wp-block-verse">
-		Song Title
-		written by: Phil Kane (2021)
+		<pre class="wp-block-verse">		
+			Song Title: "Default Title"
+			written by: Phil Kane (2022)
 		</pre>
 		<!-- /wp:verse -->';
 	}

@@ -45,6 +45,10 @@ use BweBlockPatterns\BlockPatterns\SongDataWithImageCaption\Register_Song_Data_W
 use BweBlockPatterns\BlockPatterns\Calendar\Register_Calendar_Block;
 use BweBlockPatterns\BlockPatterns\ContactUsPage\Register_Contact_Us_Page_Block;
 use BweBlockPatterns\BlockPatterns\Navigation\Register_Navigation_Block;
+use BweBlockPatterns\BlockPatterns\Portfolio\Register_portfolio_Block;
+use BweBlockPatterns\Blocks\Data_Structure;
+use BweBlockPatterns\Blocks\Data_Structure_Meta;
+
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
@@ -67,6 +71,9 @@ class Custom_Block_Patterns {
 		require_once __DIR__ . '/block-patterns/audio/index.php';
 		$register_audio_block = new Register_Audio_Block();
 
+        require_once __DIR__ . '/block-patterns/portfolio/index.php';
+		$register_portfolio_block = new Register_Portfolio_Block();
+
 		require_once __DIR__ . '/block-patterns/song-data/index.php';
 		$register_song_data_block = new Register_Song_Data_Block();
 
@@ -81,8 +88,39 @@ class Custom_Block_Patterns {
 
         require_once __DIR__ . '/block-patterns/navigation/index.php';
 		$register_calendar_block_pattern = new Register_Navigation_Block();
-       
+
+        // Add blocks
+        include_once sprintf("%s/blocks/data-structure.php", dirname(__FILE__));
+        $register_data_structure_blocks = new Blocks\Data_Structure();
+
+        include_once sprintf("%s/blocks/data-structure-meta.php", dirname(__FILE__));
+        $register_meta_data_structure_blocks = new Blocks\Data_Structure_Meta();
+
+        // register new data structure category
+        add_action( 'block_categories_all', array( $this, 'add_data_structure_block_category' ) );
+        
 	}
+
+    /**
+         *  Adds the structured data blocks category to the Gutenberg categories.
+         *
+         * @param array $categories The current categories.
+         *
+         * @return array The updated categories.
+         **/
+        function add_data_structure_block_category( $categories )
+        {
+          
+            $categories[] = array(
+                'slug'  => 'data-structure',
+                'title' => sprintf(
+                    /* translators: %1$s expands to Yoast. */
+                    __('%1$s Data Structure', 'bwe_block_patters'),
+                    'Biz Sites Etc'
+                ),
+            );
+            return $categories;
+        }
 
 	/**
      * Activate the plugin

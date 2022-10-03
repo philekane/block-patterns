@@ -1,0 +1,79 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-plants-plant-block {
+	border: 1px dotted #f00;
+}
+/**
+ * ----------------------------------------------------------------------------
+ * Editor CSS
+ * ----------------------------------------------------------------------------
+ */
+
+ .wp-block-plants-plant-block ul,
+ .wp-block-plants-plant-block li {
+	list-style: disc;
+	margin: 0 1em 0 1em;
+	padding: 0 ;
+	white-space: normal;
+ }
+ .wp-block-plants-plant-block {
+	 display: flex;
+	 align-items: stretch;
+	 background-color: #ffffff;
+	 box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+ }
+ .wp-block-plants-plant-block .plant-image {
+	 display: flex;
+	 align-items: center;
+ }
+ .wp-block-plants-plant-block .plant-image.image-inactive {
+	 background: #f4f4f4;
+	 width: 40%;
+	 border: 1px solid #dddddd;
+	 border: 1px solid red ;
+ }
+ .wp-block-plants-plant-block .plant-image.image-active {
+	 background-size: cover;
+	 background-position: center;
+	 max-width: 40%;
+ }
+ .wp-block-plants-plant-block .plant-image button {
+	 margin: 0 auto;
+ }
+ .wp-block-plants-plant-block .plant-image button.image-button {
+	 line-height: 0;
+	 padding: 0px;
+ }
+ .wp-block-plants-plant-block .plant-image button.image-button img {
+	 opacity: 0;
+	 margin: 0;
+ }
+ 
+ .wp-block-data-structure-block .data-structure-image{
+	margin-top: 10em;
+	padding: 1em;
+ }
+ .caption{
+	padding-left:1em;
+
+ }
+ .wp-block-plants-plant-block .plant-content {
+	 width: 60%;
+	 align-self: left;
+	/* padding: 36px;*/
+	 box-sizing: border-box;
+ }
+ .wp-block-plants-plant-block .plant-content h5.editor-rich-text__tinymce {
+	 color: rgba(0, 0, 0, 0.4);
+ }
+ .wp-block {
+	max-width: 100%;
+	
+ }
+ .wp-block:hover{
+	 border:green;
+ }
