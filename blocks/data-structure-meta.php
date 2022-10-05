@@ -87,12 +87,11 @@ class Data_Structure_Meta {
 		);
 		global $post;
 
-		if($post) {
+		if ( $post ) {
 			$post_id = $post->ID;
 			$post_meta = get_post_meta( $post_id );
 			if ( isset( $post_meta['bwetc_data_structure_markup'] ) ) {
 				$data_structure_markup = esc_html($post_meta['bwetc_data_structure_markup'][0]);
-				//add_filter( 'wp_head', [ $this, 'add_structured_data'], 10, 2 );
 
 				global $wp_query;
 				wp_localize_script(
@@ -106,17 +105,4 @@ class Data_Structure_Meta {
 		}
 	}
 
-	function add_structured_data()
-    {
-		global $post;
-		$post_id = $post->ID;
-		$post_meta = get_post_meta( $post_id );
-		$data_structure_markup = esc_html($post_meta['bwetc_data_structure_markup'][0]);
-	
-		ob_start();
-		echo $data_structure_markup;
-		$output_string = ob_get_contents();
-		ob_end_clean();
-		echo $output_string;
-	}
 }
