@@ -58,7 +58,7 @@
                     tagName: 'p',
                     keepplaceholderonfocus: 'true',
                     value: props.attributes.hiddenJson, // adding a p tag with hiddenJson class in order to see that data structure block was used therefore add data-structure as json-ld to head
-                    className: 'hiddenJson'
+                    className: 'hiddenJson visually-hidden'
                 })
 
             );
@@ -72,7 +72,7 @@
             return (
                 el(RichText.Content, {
                     tagName: 'p',
-                    className: 'hiddenJson',
+                    className: 'hiddenJson visually-hidden',
                     value: attributes.hiddenJson
                 })
             )

@@ -25,7 +25,6 @@ class Data_Structure_Meta {
 			add_action('enqueue_block_assets', [ $this, 'data_structure_style_enqueue' ]);
 			add_action('init', [ $this, 'data_structure_register_meta' ]);
 			add_action( 'enqueue_block_editor_assets', [ $this, 'data_structure_enqueue' ] );
-			
 		}
 
 	/**
@@ -37,8 +36,7 @@ class Data_Structure_Meta {
 	// register custom meta tag field
 	function data_structure_register_meta()
 	{
-		
-		register_meta( 
+		register_meta(
 			'post',
 			'bwetc_data_structure_markup',
 				array(
@@ -49,7 +47,6 @@ class Data_Structure_Meta {
 				),
 			);
 	}
-
 
 	function data_structure_enqueue()
 	{
@@ -66,10 +63,7 @@ class Data_Structure_Meta {
 			plugins_url( $data_meta_index_js, __FILE__ ),
 			array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor', 'wp-i18n' )
 		);
-		
-
 	}
-	
 
 	/**
 	 *  Enqueues the style.css for the frontend
@@ -92,20 +86,23 @@ class Data_Structure_Meta {
 			'true' // put in footer
 		);
 		global $post;
-		$post_id = $post->ID;
-		$post_meta = get_post_meta( $post_id );
-		if ( isset( $post_meta['bwetc_data_structure_markup'] ) ) {
-			$data_structure_markup = esc_html($post_meta['bwetc_data_structure_markup'][0]);
-			//add_filter( 'wp_head', [ $this, 'add_structured_data'], 10, 2 );
 
-			global $wp_query;
-			wp_localize_script(
-				'bwetc_data-structure-markup-index',
-				'bwetcDataStructure',
-				array(
-					'markup' => esc_attr($data_structure_markup),
-				),
-			);
+		if($post) {
+			$post_id = $post->ID;
+			$post_meta = get_post_meta( $post_id );
+			if ( isset( $post_meta['bwetc_data_structure_markup'] ) ) {
+				$data_structure_markup = esc_html($post_meta['bwetc_data_structure_markup'][0]);
+				//add_filter( 'wp_head', [ $this, 'add_structured_data'], 10, 2 );
+
+				global $wp_query;
+				wp_localize_script(
+					'bwetc_data-structure-markup-index',
+					'bwetcDataStructure',
+					array(
+						'markup' => esc_attr($data_structure_markup),
+					),
+				);
+			}
 		}
 	}
 
